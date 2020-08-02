@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use App\Tags;
 
 class BlogController extends Controller
 {
     public function index(Post $post){
         $category_widget = Category::all();
+        $tags = Tags::all();
         $data = $post->latest()->take(4)->get();
         $data2 = $post->latest()->take(6)->get();
         $data3 = $post->latest()->take(6)->get();
-        return view('blog', compact('data','data2','data3','category_widget'));
+        return view('blog', compact('data','data2','data3','category_widget','tags'));
     }
 
     public function profil(Post $post){
@@ -44,7 +46,7 @@ class BlogController extends Controller
         $category_widget = Category::all();
         $data = $category->post()->paginate(4);
         return view('blog.list_post',compact('data','category_widget'));
-    }
+    } 
 
     public function cari(request $request){
         $category_widget = Category::all();

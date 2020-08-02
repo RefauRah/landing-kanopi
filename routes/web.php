@@ -23,6 +23,8 @@ Route::get('/list-post', 'BlogController@list_post')->name('blog.list');
 
 Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
 
+// Route::get('/list-tags/{tags}', 'BlogController@list_tags')->name('blog.tags');
+
 Route::get('/profil', 'BlogController@profil')->name('blog.profil');
 
 Route::get('/kontak', 'BlogController@kontak')->name('blog.kontak');

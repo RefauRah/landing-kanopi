@@ -35,8 +35,8 @@
                     <h3 class="footer-title">Tags</h3>
                     <div class="tags-widget">
                         <ul>
-                        @foreach($category_widget as $kategori)
-                            <li><a href="{{route('blog.category', $kategori->slug)}}">{{$kategori->name}}</a></li>
+                        @foreach($tags as $tag)
+                            <li><a href="#">{{$tag->name}}</a></li>
                         @endforeach                            
                         </ul>
                     </div>
