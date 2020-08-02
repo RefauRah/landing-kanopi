@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <!-- post -->
-                        @foreach($data as $pos)
+                        @foreach($new as $pos)
                         <div class="col-md-6">
                             <div class="post">
                                 <a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="250px" alt=""></a>
@@ -107,7 +107,7 @@
 							</div>
 						</div>
                         <!-- post -->
-                        @foreach($data2 as $pos)
+                        @foreach($hot as $pos)
 						<div class="col-md-4">
 							<div class="post post-sm">
 								<a class="post-img" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="150px" alt=""></a>
@@ -138,7 +138,7 @@
                         <!-- post -->
                         <div class="col-md-12">
                             <!-- post -->
-                            @foreach($data3 as $pos)
+                            @foreach($data as $pos)
                             <div class="post post-row">
                                 <a class="post-img" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="150px" alt=""></a>
                                 <div class="post-body">
@@ -150,13 +150,13 @@
                                         <li><a href="#">{{$pos->users['name']}}</a></li>
                                         <li>{{$pos->created_at->diffForHumans()}}</li>
                                     </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                                    <p>{!! $pos->content !!}</p>
                                 </div>
                             </div>
                             @endforeach
                             <!-- /post -->
                             <div class="section-row loadmore text-center">
-                                <a href="#" class="primary-button">Load More</a>
+                                <a href="{{url('/list-post')}}" class="primary-button">Load More</a>
                             </div>
 				        </div>
 						<!-- /post -->					

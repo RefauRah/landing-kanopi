@@ -40,6 +40,14 @@
                 </select>
         </div>
         <div class="form-group">
+            <label>Pilih Type</label>
+                <select class="form-control select2" multiple="" name="types[]">
+                @foreach($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+                </select>
+        </div>
+        <div class="form-group">
             <label>Konten</label>
             <textarea name="content" class="form-control" id="content"></textarea>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Post;
 use App\Tags;
+use App\Type;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -30,8 +31,9 @@ class PostController extends Controller
     public function create()
     {
         $tags = Tags::all();
+        $types = Type::all();
         $category = Category::all();
-        return view('admin.post.create', compact('category', 'tags'));
+        return view('admin.post.create', compact('category', 'tags','types'));
     }
 
     /**
@@ -62,6 +64,7 @@ class PostController extends Controller
         ]);
 
         $post->tags()->attach($request->tags);
+        $post->types()->attach($request->types);
 
         $gambar->move('public/uploads/post/', $new_gambar);
 
@@ -89,8 +92,9 @@ class PostController extends Controller
     {
         $category = Category::all();
         $tags = Tags::all();
+        $types = Type::all();
         $post = Post::findorfail($id);
-        return view('admin.post.edit', compact('post','tags', 'category'));
+        return view('admin.post.edit', compact('post','tags', 'category','types'));
     }
 
     /**
@@ -134,6 +138,7 @@ class PostController extends Controller
 
 
         $post->tags()->sync($request->tags);
+        $post->types()->sync($request->types);
         $post->update($post_data);
 
 

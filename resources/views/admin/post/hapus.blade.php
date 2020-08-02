@@ -21,6 +21,7 @@
                 <th scope="col">Nama Post</th>
                 <th scope="col">kategori</th>
                 <th scope="col">list Tag</th>
+                <th scope="col">list Type</th>
                 <th scope="col">Gambar</th>
                 <th scope="col">Aksi</th>
             </tr>
@@ -34,7 +35,14 @@
                 <td>
                 @foreach($hasil->tags as $tag)
                     <ul>
-                        <li>{{ $tag->name }}</li>
+                    <h6><span class="badge badge-info">{{ $tag->name }}</span></h6>
+                    </ul>
+                @endforeach
+                </td>
+                <td>
+                @foreach($hasil->types as $type)
+                    <ul>
+                    <h6><span class="badge badge-info">{{ $type->name }}</span></h6>
                     </ul>
                 @endforeach
                 </td>

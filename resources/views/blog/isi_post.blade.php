@@ -1,9 +1,9 @@
 @extends('template_blog.content')
 @section('isi')
-@foreach($data as $post)
+@foreach($isi as $post)
 		<!-- PAGE HEADER -->
 		<div id="post-header" class="page-header">
-			<div class="page-header-bg" style="background-image: url({{asset($post->gambar)}});" data-stellar-background-ratio="0.5"></div>
+			<div class="page-header-bg" style="background-image:url('{{asset($post->gambar)}}');" data-stellar-background-ratio="0.5"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10">
