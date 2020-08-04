@@ -20,8 +20,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama Post</th>
                 <th scope="col">kategori</th>
-                <th scope="col">list Tag</th>
-                <th scope="col">list Type</th>
+                <th scope="col">list Tag</th>                
                 <th scope="col">Gambar</th>
                 <th scope="col">Aksi</th>
             </tr>

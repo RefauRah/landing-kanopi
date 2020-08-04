@@ -84,7 +84,7 @@
                                 <a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="250px" alt=""></a>
                                 <div class="post-body">
                                     <div class="post-category">
-                                        <a href="#">{{$pos->category['name']}}</a>
+                                        <a href="{{route('blog.category', $pos->category['slug'])}}">{{$pos->category['name']}}</a>
                                     </div>
                                     <h3 class="post-title"><a href="{{route('blog.isi', $pos->slug)}}">{{$pos->judul}}</a></h3>
                                     <ul class="post-meta">
@@ -113,7 +113,7 @@
 								<a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="150px" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
-										<a href="category.html">{{$pos->category['name']}}</a>
+										<a href="{{route('blog.category', $pos->category['slug'])}}">{{$pos->category['name']}}</a>
 									</div>
 									<h3 class="post-title title-sm"> <a href="{{route('blog.isi', $pos->slug)}}">{{$pos->judul}}</a></h3>
 									<ul class="post-meta">
@@ -143,14 +143,14 @@
                                 <a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="200px" alt=""></a>
                                 <div class="post-body">
                                     <div class="post-category">
-                                        <a href="category.html">{{$pos->category['name']}}</a>
+                                        <a href="{{route('blog.category', $pos->category['slug'])}}">{{$pos->category['name']}}</a>
                                     </div>
                                     <h3 class="post-title"><a href="{{route('blog.isi', $pos->slug)}}">{{$pos->judul}}</a></h3>
                                     <ul class="post-meta">
                                         <li><a href="#">{{$pos->users['name']}}</a></li>
                                         <li>{{$pos->created_at->diffForHumans()}}</li>
                                     </ul>
-                                    <p class="text-justify">{!! substr( $pos->content,0,-500) !!}.......</p>
+                                    <p class="text-justify">{!! substr( $pos->content,0,-500) !!}.......<a href="{{route('blog.isi', $pos->slug)}}">more</a></p>
                                 </div>
                             </div>
                             @endforeach

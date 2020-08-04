@@ -23,7 +23,7 @@
                     <h3 class="footer-title">Categories</h3>
                     <div class="category-widget">
                         <ul>
-                            @foreach($category_widget as $kategori)
+                            @foreach($category_widget->take(4) as $kategori)
                             <li><a href="{{route('blog.category', $kategori->slug)}}">{{$kategori->name}} <span>{{$kategori->post->count()}}</span></a></li>
                             @endforeach
                         </ul>

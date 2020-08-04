@@ -38,11 +38,8 @@
         <!-- post -->
         <div class="post post-widget">
             <a class="post-img img-thumbnail" href="{{route('blog.isi', $post->slug)}}"><img src="{{asset($post->gambar)}}" height="80px" alt=""></a>
-            <div class="post-body">
-                <div class="post-category">
-                    <a href="#">{{$post->category['name']}}</a>
-                </div>
-                <h3 class="post-title"><a href="{{route('blog.isi', $post->slug)}}">{{$post->judul}}</a></h3>
+            <div class="post-body">                
+                <h6><a href="{{route('blog.isi', $post->slug)}}">{{$post->judul}}</a></h6>
             </div>
         </div>
         <!-- /post -->
