@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2020 at 08:07 AM
+-- Generation Time: Aug 04, 2020 at 03:38 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.18
 
@@ -34,6 +34,13 @@ CREATE TABLE `category` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(6, 'Tenda Membrane', 'tenda-membrane', '2020-08-02 02:13:06', '2020-08-02 02:13:06');
 
 -- --------------------------------------------------------
 
@@ -87,6 +94,7 @@ CREATE TABLE `posts` (
   `category_id` int(11) NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `gambar` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total` bigint(20) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -108,19 +116,19 @@ CREATE TABLE `post_tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `post_type`
+-- Dumping data for table `post_tags`
 --
 
-CREATE TABLE `post_type` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `post_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `post_tags` (`id`, `post_id`, `tags_id`, `created_at`, `updated_at`) VALUES
+(5, 5, 6, NULL, NULL),
+(6, 5, 8, NULL, NULL),
+(7, 6, 6, NULL, NULL),
+(8, 6, 8, NULL, NULL),
+(9, 7, 8, NULL, NULL),
+(10, 8, 6, NULL, NULL),
+(11, 9, 7, NULL, NULL),
+(12, 10, 6, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -136,19 +144,14 @@ CREATE TABLE `tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `type`
+-- Dumping data for table `tags`
 --
 
-CREATE TABLE `type` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(6, 'cara pasang', 'cara-pasang', '2020-08-02 02:13:22', '2020-08-02 02:13:22'),
+(7, 'harga', 'harga', '2020-08-02 02:13:28', '2020-08-02 02:13:28'),
+(8, 'kanopi murah', 'kanopi-murah', '2020-08-02 02:13:37', '2020-08-02 02:13:37');
 
 -- --------------------------------------------------------
 
@@ -167,6 +170,13 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `tipe` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `tipe`) VALUES
+(2, 'Reza Rahman', 'rezafauzi128@gmail.com', NULL, '$2y$10$EYozhbUfe.H1GMb3BOdwRuNbFRKTOnFDcaBnHH.jPwpEb9luagvky', NULL, '2020-08-02 01:50:19', '2020-08-02 01:50:45', 1);
 
 --
 -- Indexes for dumped tables
@@ -203,21 +213,9 @@ ALTER TABLE `post_tags`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `post_type`
---
-ALTER TABLE `post_type`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tags`
 --
 ALTER TABLE `tags`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `type`
---
-ALTER TABLE `type`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -235,7 +233,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -247,37 +245,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `post_tags`
 --
 ALTER TABLE `post_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `post_type`
---
-ALTER TABLE `post_type`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `type`
---
-ALTER TABLE `type`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
