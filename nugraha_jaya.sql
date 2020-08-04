@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2020 at 03:38 PM
+-- Generation Time: Aug 04, 2020 at 07:07 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.18
 
@@ -40,7 +40,14 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(6, 'Tenda Membrane', 'tenda-membrane', '2020-08-02 02:13:06', '2020-08-02 02:13:06');
+(6, 'Tenda Membrane', 'tenda-membrane', '2020-08-02 02:13:06', '2020-08-02 02:13:06'),
+(7, 'Kanopi Kain', 'kanopi-kain', '2020-08-04 06:41:00', '2020-08-04 06:41:00'),
+(9, 'Awning Gulung', 'awning-gulung', '2020-08-04 06:42:43', '2020-08-04 06:42:43'),
+(10, 'Payung', 'payung', '2020-08-04 06:47:14', '2020-08-04 06:47:14'),
+(11, 'Genteng', 'genteng', '2020-08-04 06:47:21', '2020-08-04 06:47:21'),
+(12, 'Ata', 'ata', '2020-08-04 06:47:26', '2020-08-04 06:47:26'),
+(13, 'Rumah', 'rumah', '2020-08-04 06:47:32', '2020-08-04 06:47:32'),
+(14, 'Bata', 'bata', '2020-08-04 06:47:38', '2020-08-04 06:47:38');
 
 -- --------------------------------------------------------
 
@@ -102,6 +109,18 @@ CREATE TABLE `posts` (
   `users_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `judul`, `category_id`, `content`, `gambar`, `total`, `created_at`, `updated_at`, `slug`, `deleted_at`, `users_id`) VALUES
+(11, 'IMPLEMENTASI ALGORTIMA ONE TIME PAD (OTP) UNTUK LAYANAN OTENTIKASI DENGAN METODE CUSTOM ALGORTIMA MD5', 6, '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>', 'public/uploads/post/1596548679class_diagram.PNG', 1, '2020-08-04 06:44:39', '2020-08-04 06:44:39', 'implementasi-algortima-one-time-pad-otp-untuk-layanan-otentikasi-dengan-metode-custom-algortima-md5', NULL, 2),
+(12, 'PEMBUATAN APLIKASI SISTEM INFORMASI PRAKERIN (PRAKTEK KERJA INDUSTRI) PT LEN INDUSTRI (PERSERO)', 9, '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>', 'public/uploads/post/1596548706sequence_admin.PNG', NULL, '2020-08-04 06:45:06', '2020-08-04 06:45:06', 'pembuatan-aplikasi-sistem-informasi-prakerin-praktek-kerja-industri-pt-len-industri-persero', NULL, 2),
+(13, 'Tenda Membran', 6, '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>', 'public/uploads/post/1596548732uml_kompre.PNG', 4, '2020-08-04 06:45:32', '2020-08-04 10:04:58', 'tenda-membran', NULL, 2),
+(14, 'Kanopi kain', 11, '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>', 'public/uploads/post/1596553045300838.jpg', 1, '2020-08-04 07:57:25', '2020-08-04 10:01:34', 'kanopi-kain', NULL, 2),
+(15, 'Genteng', 11, '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>', 'public/uploads/post/1596553067wallpapersden.com_kaja-skyblocker-mobile-legends_3840x2160.jpg', 1, '2020-08-04 07:57:47', '2020-08-04 09:43:52', 'genteng', NULL, 2),
+(16, 'Dolor sit amet', 6, '<p>$post&nbsp;=&nbsp;Post::findorfail($id);</p>', 'public/uploads/post/1596560024994060.jpg', 5, '2020-08-04 09:53:44', '2020-08-04 10:05:09', 'dolor-sit-amet', NULL, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -128,7 +147,16 @@ INSERT INTO `post_tags` (`id`, `post_id`, `tags_id`, `created_at`, `updated_at`)
 (9, 7, 8, NULL, NULL),
 (10, 8, 6, NULL, NULL),
 (11, 9, 7, NULL, NULL),
-(12, 10, 6, NULL, NULL);
+(12, 10, 6, NULL, NULL),
+(13, 11, 6, NULL, NULL),
+(14, 11, 8, NULL, NULL),
+(15, 12, 7, NULL, NULL),
+(16, 12, 8, NULL, NULL),
+(17, 13, 6, NULL, NULL),
+(18, 13, 7, NULL, NULL),
+(19, 14, 7, NULL, NULL),
+(20, 15, 8, NULL, NULL),
+(21, 16, 10, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -151,7 +179,15 @@ CREATE TABLE `tags` (
 INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (6, 'cara pasang', 'cara-pasang', '2020-08-02 02:13:22', '2020-08-02 02:13:22'),
 (7, 'harga', 'harga', '2020-08-02 02:13:28', '2020-08-02 02:13:28'),
-(8, 'kanopi murah', 'kanopi-murah', '2020-08-02 02:13:37', '2020-08-02 02:13:37');
+(8, 'kanopi murah', 'kanopi-murah', '2020-08-02 02:13:37', '2020-08-02 02:13:37'),
+(10, 'asdasd', 'asdasd', '2020-08-04 07:50:23', '2020-08-04 07:50:23'),
+(11, 'asdkjhaskd', 'asdkjhaskd', '2020-08-04 07:50:27', '2020-08-04 07:50:27'),
+(12, 'lasndkhask', 'lasndkhask', '2020-08-04 07:50:32', '2020-08-04 07:50:32'),
+(13, 'bs,DB', 'bsdb', '2020-08-04 07:50:36', '2020-08-04 07:50:36'),
+(14, 'nnbasbsjf', 'nnbasbsjf', '2020-08-04 07:50:41', '2020-08-04 07:50:41'),
+(15, 'basdbjs', 'basdbjs', '2020-08-04 07:50:45', '2020-08-04 07:50:45'),
+(16, 'djabdshldga', 'djabdshldga', '2020-08-04 07:50:50', '2020-08-04 07:50:50'),
+(17, 'kjhaasflalgfkj', 'kjhaasflalgfkj', '2020-08-04 07:50:55', '2020-08-04 07:50:55');
 
 -- --------------------------------------------------------
 
@@ -233,7 +269,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -245,19 +281,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `post_tags`
 --
 ALTER TABLE `post_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`

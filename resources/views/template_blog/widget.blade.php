@@ -40,6 +40,10 @@
             <a class="post-img img-thumbnail" href="{{route('blog.isi', $post->slug)}}"><img src="{{asset($post->gambar)}}" height="80px" alt=""></a>
             <div class="post-body">                
                 <h6><a href="{{route('blog.isi', $post->slug)}}">{{$post->judul}}</a></h6>
+                <ul class="post-meta">
+                    <li><a href="#">{{$pos->users['name']}}</a></li>
+                    <li>{{$pos->created_at->diffForHumans()}}</li>
+                </ul>
             </div>
         </div>
         <!-- /post -->

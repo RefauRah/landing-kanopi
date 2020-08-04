@@ -36,11 +36,16 @@ class BlogController extends Controller
 
     public function isi_blog($slug){
         $category_widget = Category::all();
-        $tags = Tags::all()->take(10);
+        $tags = Tags::all()->take(10);        
         $data = Post::latest()->get();
         $hot = Post::where('total','>=',1)->orderBy('total','DESC')->take(6)->get();
         $isi = Post::where('slug', $slug)->get();
-        return view('blog.isi_post', compact('data','isi','category_widget','tags','hot'));
+        
+        $jml = Post::where('slug', $slug)->first();
+        $jml->total +=1;
+        $jml->save();
+        
+        return view('blog.isi_post', compact('data','isi','category_widget','tags','hot','jml'));
     }
 
     public function list_post(Post $post){
