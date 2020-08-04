@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <!-- post -->
-                        @foreach($new as $pos)
+                        @foreach($data as $pos)
                         <div class="col-md-6">
                             <div class="post">
                                 <a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="250px" alt=""></a>
@@ -107,10 +107,10 @@
 							</div>
 						</div>
                         <!-- post -->
-                        @foreach($hot as $pos)
+                        @foreach($trend as $pos)
 						<div class="col-md-4">
 							<div class="post post-sm">
-								<a class="post-img" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="150px" alt=""></a>
+								<a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="150px" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 										<a href="category.html">{{$pos->category['name']}}</a>
@@ -140,7 +140,7 @@
                             <!-- post -->
                             @foreach($data as $pos)
                             <div class="post post-row">
-                                <a class="post-img" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="150px" alt=""></a>
+                                <a class="post-img img-thumbnail" href="{{route('blog.isi', $pos->slug)}}"><img src="{{asset($pos->gambar)}}" height="200px" alt=""></a>
                                 <div class="post-body">
                                     <div class="post-category">
                                         <a href="category.html">{{$pos->category['name']}}</a>
@@ -150,7 +150,7 @@
                                         <li><a href="#">{{$pos->users['name']}}</a></li>
                                         <li>{{$pos->created_at->diffForHumans()}}</li>
                                     </ul>
-                                    <p>{!! $pos->content !!}</p>
+                                    <p class="text-justify">{!! substr( $pos->content,0,-500) !!}.......</p>
                                 </div>
                             </div>
                             @endforeach

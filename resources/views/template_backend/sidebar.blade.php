@@ -28,13 +28,7 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('tag.index') }}">List tag</a></li>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-bookmark"></i> <span>Type</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('type.index') }}">List type</a></li>
-              </ul>
-            </li>
+            </li>            
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-user"></i> <span>Users</span></a>
               <ul class="dropdown-menu">

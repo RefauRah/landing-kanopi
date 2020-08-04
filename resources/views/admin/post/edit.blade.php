@@ -49,21 +49,7 @@
                     >{{ $tag->name }}</option>
                 @endforeach
                 </select>
-        </div>
-        <div class="form-group">
-            <label>Pilih Types</label>
-                <select class="form-control select2" multiple="" name="types[]">
-                @foreach($types as $type)
-                    <option value="{{ $type->id }}"
-                    @foreach($post->types as $value)
-                        @if($type->id == $value->id)
-                        selected
-                        @endif
-                    @endforeach
-                    >{{ $type->name }}</option>
-                @endforeach
-                </select>
-        </div>
+        </div> 
         <div class="form-group">
             <label>Konten</label>
             <textarea name="content" class="form-control" id="content">{{ $post->content }}</textarea>

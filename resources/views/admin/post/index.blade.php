@@ -42,14 +42,7 @@
                     <h6><span class="badge badge-info">{{ $tag->name }}</span></h6>
                     </ul>
                 @endforeach
-                </td>
-                <td>
-                @foreach($hasil->types as $type)
-                    <ul>
-                    <h6><span class="badge badge-info">{{ $type->name }}</span></h6>
-                    </ul>
-                @endforeach
-                </td>
+                </td>            
                 <td>{{ $hasil->users['name'] }}</td>
                 <td><img src="{{ asset( $hasil->gambar ) }}" class="img-fluid" style="width:100px"></td>
                 <td>

@@ -34,10 +34,10 @@
         <div class="section-title">
             <h2 class="title">Postingan Populer</h2>
         </div>
-        @foreach($data as $post)
+        @foreach($hot as $post)
         <!-- post -->
         <div class="post post-widget">
-            <a class="post-img" href="{{route('blog.isi', $post->slug)}}"><img src="{{asset($post->gambar)}}" alt=""></a>
+            <a class="post-img img-thumbnail" href="{{route('blog.isi', $post->slug)}}"><img src="{{asset($post->gambar)}}" height="80px" alt=""></a>
             <div class="post-body">
                 <div class="post-category">
                     <a href="#">{{$post->category['name']}}</a>

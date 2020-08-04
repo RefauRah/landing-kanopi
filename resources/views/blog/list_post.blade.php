@@ -12,6 +12,7 @@
                 <li><a href="#">{{$list->users['name']}}</a></li>
                 <li>{{$list->created_at->diffForHumans()}}</li>
             </ul>
+            <p class="text-justify">{!! substr( $list->content,0,-500) !!}.......</p>
         </div>
     </div>
     @endforeach
